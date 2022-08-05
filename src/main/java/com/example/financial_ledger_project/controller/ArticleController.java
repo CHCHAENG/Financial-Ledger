@@ -29,13 +29,13 @@ public class ArticleController {
 	@PostMapping("/articles/checkID")
 	public String checkIDArticle(ArticleForm form) {
 		if(form.checkID()){
-			return "redirect:mainPage";
+			return "redirect:Mainpage";
 		}
 
 		return "redirect:login";
 	}
 
-	@GetMapping("/articles/mainPage")
+	@GetMapping("/articles/Mainpage")
 	public String mainPageArticleForm(Model model) {
 		model.addAttribute("username", "현서");
 		return"/articles/mainPage";

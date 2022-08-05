@@ -1,20 +1,22 @@
 package com.example.financial_ledger_project.dto;
 
+import java.net.IDN;
+
 public class ArticleForm {
 	
-	private String title;
-	private String content;
+	private String ID;
+	private String password;
 
-	public ArticleForm(String title, String content) {
-		this.title = title;
-		this.content = content;
+	public ArticleForm(String ID, String password) {
+		this.ID = ID;
+		this.password = password;
 	}
 
 	@Override
 	public String toString() {
 		return "ArticleForm{" +
-                "title='" + title + '\'' +
-                ", content='" + content + '\'' +
+                "ID='" + ID + '\'' +
+                ", password='" + password + '\'' +
                 '}';
 	}
 
@@ -22,7 +24,7 @@ public class ArticleForm {
 		String id = "hyunseo";
 		String pw = "1234";
 
-		if(title.equals(id) && content.equals(pw)){
+		if(ID.equals(id) && password.equals(pw)){
 			return true;
 		}
 
