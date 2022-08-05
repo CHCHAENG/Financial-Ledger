@@ -1,7 +1,5 @@
 package com.example.financial_ledger_project.dto;
 
-import java.net.IDN;
-
 public class ArticleForm {
 	
 	private String ID;
