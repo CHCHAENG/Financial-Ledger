@@ -2,27 +2,31 @@ package com.example.financial_ledger_project.dto;
 
 public class ArticleForm {
 	
-	private String title;
-	private String content;
+	private String ID;
+	private String Password;
+	private String name;
 
-	public ArticleForm(String title, String content) {
-		this.title = title;
-		this.content = content;
+
+	public ArticleForm(String ID, String Password, String name) {
+		this.ID = ID;
+		this.Password = Password;
+		this.name = name;
 	}
 
 	@Override
 	public String toString() {
 		return "ArticleForm{" +
-                "title='" + title + '\'' +
-                ", content='" + content + '\'' +
+                "ID='" + ID + '\'' +
+                ", Password='" + Password + '\'' +
+				", name = '" + name + '\'' +
                 '}';
 	}
 
 	public boolean checkID() {
-		String id = "hyunseo";
-		String pw = "1234";
+		String id = ID;
+		String pw = Password;
 
-		if(title.equals(id) && content.equals(pw)){
+		if(ID.equals(id) && Password.equals(pw)){
 			return true;
 		}
 
