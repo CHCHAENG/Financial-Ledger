@@ -1,28 +1,27 @@
 package com.example.financial_ledger_project.dto;
 
+import com.example.financial_ledger_project.entity.Article;
+
+import lombok.AllArgsConstructor;
+import lombok.ToString;
+
+@AllArgsConstructor
+@ToString
 public class ArticleForm {
 	
-	private String ID;
-	private String password;
+	private Long id;
+	private String title;
+	private String content;
 
-	public ArticleForm(String ID, String password) {
-		this.ID = ID;
-		this.password = password;
-	}
-
-	@Override
-	public String toString() {
-		return "ArticleForm{" +
-                "ID='" + ID + '\'' +
-                ", password='" + password + '\'' +
-                '}';
+	public Article toEntity() {
+		return new Article(id, title, content);
 	}
 
 	public boolean checkID() {
 		String id = "hyunseo";
 		String pw = "1234";
 
-		if(ID.equals(id) && password.equals(pw)){
+		if(title.equals(id) && content.equals(pw)){
 			return true;
 		}
 
