@@ -11,6 +11,13 @@
 <header>
 </header>
 <section>
+    {{#msg}}
+    <div style="width: 300px; height:20px; background-color: rgba(130,200,160,1); display: inline-block;">
+        <div class="alert alert-primary alert-dismissible">
+            {{msg}}
+        </div>
+    </div>
+    {{/msg}}
     <article>
         <form class="container pure-steps" action="/articles/checkID" method="post">
             <input type="radio" name="steps" class="pure-steps_radio" id="step-0" checked="">
@@ -18,17 +25,17 @@
                 <ol>
                     <li class="pure-steps_group-step">
                         <fieldset>
-							<legend class="pure-steps_group-step_legend">Sign in</legend>
+							<legend class="pure-steps_group-step_legend" style="text-align: left;">Sign In</legend>
 							<div>
 							<p class="pure-steps_group-step_item flexy-item flexy-column reverse">
 								<input type="text" placeholder="Type your ID here" value="" name="login_ID">
-								<label class="form-label">ID</label>
+								<label class="form-label" style="text-align: left;">ID</label>
 							</p>
 							</div>
 							<div>
 							<p class="pure-steps_group-step_item flexy-item flexy-column reverse">
-								<input type="password" placeholder="Type your password here" value="" name="passWord">
-								<label class="form-control">Password</label>
+								<input type="password" placeholder="Type your password here" value="" name="login_pw">
+								<label class="form-control" style="text-align: left;">Password</label>
 							</p>
 							</div>
                         </fieldset>
@@ -38,7 +45,7 @@
                 <ol class="pure-steps_group-triggers">
                     <li></li>
                     <li class="pure-steps_group-triggers_item">
-						<label><button type="submit" class="btn-gradient green mini">SIGN IN</button></label>
+						<label><button type="submit" class="btn-gradient green mini">SIGN IN</button>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/articles/signup" class="btn-gradient green mini"><b>SIGN UP</b></a></label>
                     </li>
                 </ol>
             </div>
