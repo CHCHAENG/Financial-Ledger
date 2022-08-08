@@ -1,6 +1,5 @@
 package com.example.financial_ledger_project.controller;
 
-
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -103,18 +102,4 @@ public class ArticleController {
 		return "redirect:/articles";
 	}
 
-	@PostMapping("/articles/checkID")
-	public String checkIDArticle(ArticleForm form) {
-		if(form.checkID()){
-			return "redirect:Mainpage";
-		}
-
-		return "redirect:login";
-	}
-
-	@GetMapping("/articles/Mainpage")
-	public String mainPageArticleForm(Model model) {
-		model.addAttribute("username", "현서");
-		return"/articles/mainPage";
-	}
 }

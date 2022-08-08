@@ -16,16 +16,15 @@ import lombok.ToString;
 @ToString
 @NoArgsConstructor
 @Getter
-public class Article {
+public class login_ID {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 
 	@Column
-	private String title;
+	private String login_ID;
 
 	@Column
-	private String content;
-
+	private String login_pw;
 }

@@ -17,15 +17,4 @@ public class ArticleForm {
 		return new Article(id, title, content);
 	}
 
-	public boolean checkID() {
-		String id = "hyunseo";
-		String pw = "1234";
-
-		if(title.equals(id) && content.equals(pw)){
-			return true;
-		}
-
-		return false;
-	}
-	
 }
