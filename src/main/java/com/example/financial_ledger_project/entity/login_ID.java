@@ -28,4 +28,7 @@ public class login_ID {
 	@Column
 	private String login_pw;
 	
+	@Column
+	private String login_name;
+
 }
