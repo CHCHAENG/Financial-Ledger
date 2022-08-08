@@ -1,8 +1,29 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Sign up</title>
     <link rel="stylesheet" type="text/css" href="/css/signuppage.css">
 </head>
+<script>
+	function check_pw(){
+		var pw = document.getElementById('pw').value;
+
+		if(document.getElementById('pw').value !='' && document.getElementById('pw2').value!=''){
+			if(document.getElementById('pw').value==document.getElementById('pw2').value){
+				document.getElementById('check').innerHTML='비밀번호가 일치합니다.'
+				document.getElementById('check').style.color='blue';
+			}
+			else{
+				document.getElementById('check').innerHTML='비밀번호가 일치하지 않습니다.';
+				document.getElementById('check').style.color='red';
+			}
+		}
+	}
+</script>
+
 <div class="form_wrapper">
     <div class="form_container">
         <div class="title_container">
@@ -15,10 +36,13 @@
                         <input type="text" name="login_ID" placeholder="ID" required />
                     </div>
                     <div class="input_field"> <span><i aria-hidden="true" class="fa fa-lock"></i></span>
-                        <input type="password" name="login_pw" placeholder="Password" required />
+                        <input type="password" name="login_pw" id="pw" placeholder="Password" onchange="check_pw()" required />
                     </div>
+					<div>
+						<span id="check"></span>
+					</div>
                     <div class="input_field"> <span><i aria-hidden="true" class="fa fa-lock"></i></span>
-                        <input type="password" name="login_pw_check" placeholder="Re-type Password" required />
+                        <input type="password" name="login_pw_check" id="pw2" placeholder="Re-type Password" onchange="check_pw()" required />
                     </div>
                     <div>
 						<div class="input_field"> <span><i aria-hidden="true" class="fa fa-user"></i></span>
