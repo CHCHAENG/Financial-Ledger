@@ -1,0 +1,215 @@
+/* Main Page */
+* {
+	box-sizing: border-box;
+}
+
+/* Auto layout */
+* {
+	display: flex;
+	flex-direction: row;
+	align-items: flex-start;
+	padding: 10px;
+	gap: 10px;
+
+	position: relative;
+	width: 28px;
+	height: 21px;
+
+	background: #FFFFFF;
+	border: 1px solid #000000;
+	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+/* Vector */
+.calender-locate {
+	position: absolute;
+	width: 53px;
+	height: 53px;
+
+	background: rgba(119, 119, 119, 0.7);
+}
+
+/* Vector */
+.income-locate {
+	position: absolute;
+	width: 58px;
+	height: 49px;
+
+	background: rgba(119, 119, 119, 0.7);
+}
+
+/* Vector */
+.mypage-locate {
+	position: absolute;
+	width: 56px;
+	height: 56px;
+
+	background: rgba(119, 119, 119, 0.7);
+}
+
+/* Vector */
+.mainpage-locate {
+	position: absolute;
+	width: 57px;
+	height: 54px;
+
+	background: #777777;
+}
+
+/* Line 1 */
+.leftside-locate {
+	position: absolute;
+	width: 1024px;
+	height: 0px;
+
+	border: 1px solid #000000;
+	transform: rotate(90deg);
+}
+
+/* Line 2 */
+.center-locate {
+	position: absolute;
+	width: 1318px;
+	height: 0px;
+
+	border: 1px solid #000000;
+}
+
+/* Line 3 */
+.center-seperate-locate {
+	position: absolute;
+	width: 512px;
+	height: 0px;
+
+	border: 1px solid #000000;
+	transform: rotate(90deg);
+}
+
+/* Ellipse 1 */
+.cost-first-locate {
+	position: absolute;
+	width: 240px;
+	height: 240px;
+
+	background: #D9D9D9;
+}
+
+/* Ellipse 2 */
+.cost-third-locate {
+	position: absolute;
+	width: 170px;
+	height: 170px;
+
+	background: #D9D9D9;
+}
+
+/* Ellipse 4 */
+.cost-fourth-locate {
+	position: absolute;
+	width: 150px;
+	height: 150px;
+
+	background: #D9D9D9;
+}
+
+/* Ellipse 3 */
+.cost-second-locate {
+	position: absolute;
+	width: 200px;
+	height: 200px;
+
+	background: #D9D9D9;
+}
+
+/* 이번달 지출 */
+.month-cost {
+	position: absolute;
+	width: 109px;
+	height: 98px;
+
+	font-family: 'Inter';
+	font-style: italic;
+	font-weight: 500;
+	font-size: 36px;
+	line-height: 44px;
+	text-align: center;
+
+	color: #000000;
+}
+
+
+/* 지출 카테고리 순위 */
+.cost-grade-locate {
+	position: absolute;
+	width: 328px;
+	height: 49px;
+
+	font-family: 'Inter';
+	font-style: italic;
+	font-weight: 500;
+	font-size: 36px;
+	line-height: 44px;
+	text-align: center;
+
+	color: #000000;
+}
+
+
+/* 이번달 수입 */
+.month-income{
+	position: absolute;
+	width: 109px;
+	height: 98px;
+
+	font-family: 'Inter';
+	font-style: italic;
+	font-weight: 500;
+	font-size: 36px;
+	line-height: 44px;
+	text-align: center;
+
+	color: #000000;
+}
+
+
+/* Vector */
+.cost-locate {
+	position: absolute;
+	width: 62px;
+	height: 45px;
+
+	background: rgba(119, 119, 119, 0.7);
+}
+
+/* 50마넌 */
+.month-cost-locate {
+	position: absolute;
+	width: 239px;
+	height: 94px;
+
+	font-family: 'Inter';
+	font-style: italic;
+	font-weight: 500;
+	font-size: 36px;
+	line-height: 44px;
+	text-align: center;
+
+	color: #000000;
+}
+
+
+/* 50마넌 */
+.month-income-locate {
+	position: absolute;
+	width: 239px;
+	height: 94px;
+
+	font-family: 'Inter';
+	font-style: italic;
+	font-weight: 500;
+	font-size: 36px;
+	line-height: 44px;
+	text-align: center;
+
+	color: #000000;
+}

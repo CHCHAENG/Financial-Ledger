@@ -18,6 +18,7 @@ time, mark, audio, video {
   font: inherit;
   font-size: 100%;
   vertical-align: baseline;
+  text-align: center;
 }
 
 html {
@@ -118,6 +119,7 @@ article header {
   font-weight: 300;
 }
 .pure-steps .pure-steps_group {
+  top: 100px;
   position: relative;
   min-height: 26em;
   border-radius: 0.4em;
@@ -217,7 +219,6 @@ article header {
   position: absolute;
   left: 0;
   width: 0%;
-  height: 0.1em;
   background: rgba(178, 255, 65, 0.4);
   will-change: width;
   transition: width 0.6s ease-in-out;
