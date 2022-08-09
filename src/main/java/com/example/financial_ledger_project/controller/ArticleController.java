@@ -36,15 +36,6 @@ public class ArticleController {
 		return "";
 	}
 
-	@PostMapping("/articles/checkID")
-	public String checkIDArticle(ArticleForm form) {
-		if(form.checkID()){
-			return "redirect:mainPage";
-		}
-
-		return "redirect:login";
-	}
-
 	@GetMapping("/articles/mainPage")
 	public String mainPageArticleForm(Model model) {
 		model.addAttribute("username", "현서");
