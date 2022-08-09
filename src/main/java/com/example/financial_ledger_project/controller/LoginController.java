@@ -36,15 +36,21 @@ public class LoginController {
 		return "redirect:login";
 
 	}
+
 	@PostMapping("/articles/checkID")
 	public String checkIDArticle(LoginForm form, RedirectAttributes rttr) {
-		if(form.checkID()){
-			return "redirect:Mainpage";
+		login_ID article = form.toEntity();
+		String id = article.getLogin_ID();
+		login_ID target = loginRepository.findById(id).orElse(null);
+
+		if(target!=null && article.checkID(target)){
+			log.info("if문");
+			return "redirect:/articles/Mainpage";
 		}
 
 		rttr.addFlashAttribute("msg", "ID 혹은 비밀번호가 잘못되었습니다!");
 
-		return "redirect:login";
+		return "redirect:/articles/login"; // -> http://localhost:8080/articles/checkID/Mainpage
 	}
 
 	@GetMapping("/articles/Mainpage")

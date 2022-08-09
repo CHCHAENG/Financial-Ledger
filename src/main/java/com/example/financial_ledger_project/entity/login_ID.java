@@ -18,11 +18,11 @@ import lombok.ToString;
 @Getter
 public class login_ID {
 	
-	@Id
+	@Column
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 
-	@Column
+	@Id
 	private String login_ID;
 
 	@Column
@@ -31,4 +31,14 @@ public class login_ID {
 	@Column
 	private String login_name;
 
+	public boolean checkID(login_ID target) {
+		String pw = target.login_pw;
+
+		if(this.login_pw.equals(pw)){
+			return true;
+		}
+
+		return false;
+	}
+	
 }

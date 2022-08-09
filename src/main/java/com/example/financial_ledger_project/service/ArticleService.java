@@ -3,7 +3,6 @@ package com.example.financial_ledger_project.service;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.transaction.TransactionScoped;
 import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
