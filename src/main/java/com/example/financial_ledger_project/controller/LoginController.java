@@ -50,9 +50,9 @@ public class LoginController {
 
 		rttr.addFlashAttribute("msg", "ID 혹은 비밀번호가 잘못되었습니다!");
 
-		return "redirect:/articles/login"; // -> http://localhost:8080/articles/checkID/Mainpage
+		return "redirect:/articles/login";
 	}
-
+	
 	@GetMapping("/articles/Mainpage")
 	public String mainPageArticleForm(Model model) {
 		model.addAttribute("username", "현서");
