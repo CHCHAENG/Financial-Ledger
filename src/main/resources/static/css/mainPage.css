@@ -25,8 +25,6 @@
 	position: absolute;
 	width: 53px;
 	height: 53px;
-
-	background: rgba(119, 119, 119, 0.7);
 }
 
 /* Vector */
@@ -34,8 +32,6 @@
 	position: absolute;
 	width: 58px;
 	height: 49px;
-
-	background: rgba(119, 119, 119, 0.7);
 }
 
 /* Vector */
@@ -43,8 +39,6 @@
 	position: absolute;
 	width: 56px;
 	height: 56px;
-
-	background: rgba(119, 119, 119, 0.7);
 }
 
 /* Vector */
@@ -52,8 +46,6 @@
 	position: absolute;
 	width: 57px;
 	height: 54px;
-
-	background: #777777;
 }
 
 /* Line 1 */
@@ -177,8 +169,6 @@
 	position: absolute;
 	width: 62px;
 	height: 45px;
-
-	background: rgba(119, 119, 119, 0.7);
 }
 
 /* 50마넌 */
