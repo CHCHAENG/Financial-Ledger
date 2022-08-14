@@ -23,10 +23,6 @@ public class ArticleController {
 	@Autowired
 	private ArticleRepository articleRepository;
 	
-	@GetMapping("/articles/login")
-	public String loginForm() {
-		return "articles/login";
-	}
 	
 	@GetMapping("/articles/new")
 	public String newArticleForm() {
