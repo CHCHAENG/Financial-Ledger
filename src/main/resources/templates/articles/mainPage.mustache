@@ -3,48 +3,54 @@
 		<meta charset="UTF-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <!-- <link rel="stylesheet" type="text/css" href="/css/mainPage.css"> -->
-		<title>Mainpage</title>
+        <link rel="stylesheet" type="text/css" href="/css/mainPage.css">
+		<title>{{user.login_name}}'s Mainpage</title>
 	</head>
 	<body>
 		<header>
-			<h1>LOGO</h1>
-			<h2>검색</h2>
-			<input type="text">
 		</header>
 		<nav>
-			<h1>메인 내비게이션</h1>
-			<ul>
-			  <li>메뉴1</li>
-			  <li>메뉴2</li>
-			</ul>
 		</nav>
 		<section>
 			<article>
-			  <h1>제목</h1>
-			  <p>본문</p>
 			</article>
 		</section>
+		<div class="window-block">
+			<div class="side-bar"> <!-- side bar -->
+
+			</div>
+			<div class="main-box"> <!-- main -->
+				<div class="div50">
+					<div class="cost-box"> <!-- monthly cost -->
+						<div><pre>costbox</pre></div>
+					</div>
+					<div class="income-box"> <!-- monthly income -->
+						<p>incomebox</p>
+					</div>
+				</div>
+				<div class="category-box"> <!-- category -->
+					<div class="category-rank">
+						<pre class="category-pont"><b>지출 카테고리 순위</b></pre>
+					</div>
+					<div class="circle-div">
+						<div class="circle1" onclick="location.href='new';"><p>쇼핑</p></div>
+						<div class="circle2" onclick="location.href='new';"></div>
+						<div class="circle3" onclick="location.href='new';"></div>
+						<div class="circle4" onclick="location.href='new';"></div>
+					</div>
+				</div>
+			</div>
+		</div>
 		<article>
 			<header>
-			  <h1>HTML5 구조</h1>
-			  <p>Published On <time datetime="2013-01-22">2013년1월22일</time></p>
 			</header>
+			<footer></footer>
 		  
-			<p>본문 내용</p>
-			<p>{{user.login_name}}</p>
-		  
-			<footer>Posted in unclepapa</footer>
-		  
-			<article> <!-- 코멘트 시작 -->
+			<article>
 			  <header>
-				  작성자:<a href="">나그네</a> at <time datetime="2013-01-22T08:45">2013년1월22일 08:45</time>
 			  </header>
-		  
-			  <p>코멘트 내용</p>
-			</article> <!-- 코멘트 끝 -->
+			</article>
 		</article>
-		<a href="/articles/logout" class="btn btn-danger">Log Out</a>
 		<footer></footer>
 	</body>
 </html>

@@ -1,9 +1,9 @@
-/* Main Page */
+/* Main Page ////
 * {
 	box-sizing: border-box;
 }
 
-/* Auto layout */
+/* Auto layout ////
 * {
 	display: flex;
 	flex-direction: row;
@@ -20,35 +20,35 @@
 	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
-/* Vector */
+/* Vector ////
 .calender-locate {
 	position: absolute;
 	width: 53px;
 	height: 53px;
 }
 
-/* Vector */
+/* Vector ////
 .income-locate {
 	position: absolute;
 	width: 58px;
 	height: 49px;
 }
 
-/* Vector */
+/* Vector ////
 .mypage-locate {
 	position: absolute;
 	width: 56px;
 	height: 56px;
 }
 
-/* Vector */
+/* Vector ////
 .mainpage-locate {
 	position: absolute;
 	width: 57px;
 	height: 54px;
 }
 
-/* Line 1 */
+/* Line 1 ////
 .leftside-locate {
 	position: absolute;
 	width: 1024px;
@@ -58,7 +58,7 @@
 	transform: rotate(90deg);
 }
 
-/* Line 2 */
+/* Line 2 ////
 .center-locate {
 	position: absolute;
 	width: 1318px;
@@ -67,7 +67,7 @@
 	border: 1px solid #000000;
 }
 
-/* Line 3 */
+/* Line 3 ////
 .center-seperate-locate {
 	position: absolute;
 	width: 512px;
@@ -77,7 +77,7 @@
 	transform: rotate(90deg);
 }
 
-/* Ellipse 1 */
+/* Ellipse 1 ////
 .cost-first-locate {
 	position: absolute;
 	width: 240px;
@@ -86,7 +86,7 @@
 	background: #D9D9D9;
 }
 
-/* Ellipse 2 */
+/* Ellipse 2 ////
 .cost-third-locate {
 	position: absolute;
 	width: 170px;
@@ -95,7 +95,7 @@
 	background: #D9D9D9;
 }
 
-/* Ellipse 4 */
+/* Ellipse 4 ////
 .cost-fourth-locate {
 	position: absolute;
 	width: 150px;
@@ -104,7 +104,7 @@
 	background: #D9D9D9;
 }
 
-/* Ellipse 3 */
+/* Ellipse 3 ////
 .cost-second-locate {
 	position: absolute;
 	width: 200px;
@@ -113,7 +113,7 @@
 	background: #D9D9D9;
 }
 
-/* 이번달 지출 */
+/* 이번달 지출 ////
 .month-cost {
 	position: absolute;
 	width: 109px;
@@ -130,7 +130,7 @@
 }
 
 
-/* 지출 카테고리 순위 */
+/* 지출 카테고리 순위 ////
 .cost-grade-locate {
 	position: absolute;
 	width: 328px;
@@ -147,7 +147,7 @@
 }
 
 
-/* 이번달 수입 */
+/* 이번달 수입 ////
 .month-income{
 	position: absolute;
 	width: 109px;
@@ -164,14 +164,14 @@
 }
 
 
-/* Vector */
+/* Vector ////
 .cost-locate {
 	position: absolute;
 	width: 62px;
 	height: 45px;
 }
 
-/* 50마넌 */
+/* 50마넌 ////
 .month-cost-locate {
 	position: absolute;
 	width: 239px;
@@ -188,7 +188,7 @@
 }
 
 
-/* 50마넌 */
+/* 50마넌 ////
 .month-income-locate {
 	position: absolute;
 	width: 239px;
@@ -202,4 +202,135 @@
 	text-align: center;
 
 	color: #000000;
+} */
+
+.window-block {
+	width: 100%;
+	height: 100%;
 }
+
+.side-bar {
+	float: left;
+	width: 10%;
+	height: 900px;
+ 
+	border-right: 1px solid #000000;
+ }
+
+.main-box {
+	float: left;
+	width: 89%;
+	height: 900px;
+ }
+ 
+.category-box {
+	margin-right: 0px;
+	width: 100%;
+	height: 400px;
+ }
+
+ .div50 {
+	margin: 0px;
+	width: 100%;
+	height: 450px;
+
+ }
+
+.cost-box {
+	float: left;
+
+	width: 50%;
+	height: 450px;
+ 
+	border-right: 1px solid #000000;
+	border-bottom: 1px solid #000000;
+ }	
+
+ .income-box {
+	float: left;
+
+	width: 49%;
+	height: 450px;
+ 
+	border-bottom: 1px solid #000000;
+ }
+
+ .category-rank {
+	position: relative;
+	width: 100px;
+	top: 10px;
+	left: 40px;
+ }
+
+ .category-pont {
+	font-family: 'Inter';
+	font-style: italic;
+	
+	font-size: 36px;
+ }
+
+ .circle-div {
+	float: left;
+	width: 100%;
+	height: 70%;
+ }
+
+ .circle1 {
+	float: left;
+	position: relative;
+	top: 30px;
+	left: 250px;
+	width: 240px;
+	height: 240px;
+	border-radius: 50%;
+	background: #D9D9D9;
+	font-size: 16px;
+	text-align: center;
+	line-height: 200px;
+	/* background:url(/img/imgname) center 100% no-repeat; */
+ }
+
+ .circle2 {
+	float: left;
+	position: relative;
+	top: 50px;
+	left: 350px;
+	width: 200px;
+	height: 200px;
+	border-radius: 50%;
+	background: #D9D9D9;
+	font-size: 16px;
+	text-align: center;
+	line-height: 200px;
+	/* background:url(/img/imgname) center 100% no-repeat; */
+ }
+
+ .circle3 {
+	float: left;
+	position: relative;
+	top: 65px;
+	left: 450px;
+	width: 170px;
+	height: 170px;
+	border-radius: 50%;
+	background: #D9D9D9;
+	font-size: 16px;
+	text-align: center;
+	line-height: 200px;
+	/* background:url(/img/imgname) center 100% no-repeat; */
+ }
+
+ .circle4 {
+	float: left;
+	position: relative;
+	top: 75px;
+	left: 550px;
+	width: 150px;
+	height: 150px;
+	border-radius: 50%;
+	background: #D9D9D9;
+	font-size: 16px;
+	text-align: center;
+	line-height: 200px;
+	/* background:url(/img/imgname) center 100% no-repeat; */
+ }
