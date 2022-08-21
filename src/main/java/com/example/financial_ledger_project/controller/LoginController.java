@@ -71,6 +71,28 @@ public class LoginController {
 		return "redirect:/articles/login";
 	}
 
+	@GetMapping("/articles/Costpage")
+	public String costPageArticleForm(Model model) {
+		if(user_id == null) {
+			return "redirect:/articles/login";
+		}
+		login_ID target = loginRepository.findById(user_id).orElse(null);
+
+		model.addAttribute("user", target);
+		return "/articles/costPage";
+	}
+
+	@GetMapping("/articles/Calenderpage")
+	public String calenderPageArticleForm(Model model) {
+		if(user_id == null) {
+			return "redirect:/articles/login";
+		}
+		login_ID target = loginRepository.findById(user_id).orElse(null);
+
+		model.addAttribute("user", target);
+		return "/articles/calenderPage";
+	}
+
 	@GetMapping("/articles/Mainpage")
 	public String mainPageArticleForm(Model model) {
 		if(user_id == null) {
@@ -80,6 +102,28 @@ public class LoginController {
 
 		model.addAttribute("user", target);
 		return "/articles/mainPage";
+	}
+
+	@GetMapping("/articles/Incomepage")
+	public String incomePageArticleForm(Model model) {
+		if(user_id == null) {
+			return "redirect:/articles/login";
+		}
+		login_ID target = loginRepository.findById(user_id).orElse(null);
+
+		model.addAttribute("user", target);
+		return "/articles/incomePage";
+	}
+
+	@GetMapping("/articles/Mypage")
+	public String myPageArticleForm(Model model) {
+		if(user_id == null) {
+			return "redirect:/articles/login";
+		}
+		login_ID target = loginRepository.findById(user_id).orElse(null);
+
+		model.addAttribute("user", target);
+		return "/articles/myPage";
 	}
 
 	@GetMapping("/articles/logout")

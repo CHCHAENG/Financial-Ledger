@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 	<head>
 		<meta charset="UTF-8">
@@ -17,15 +18,32 @@
 		</section>
 		<div class="window-block">
 			<div class="side-bar"> <!-- side bar -->
-
+				<div class="img-cost" onclick="location.href='/articles/Costpage';"></div>
+				<div class="img-calender" onclick="location.href='/articles/Calenderpage';"></div>
+				<div class="img-home" onclick="location.href='/articles/Mainpage';"></div>
+				<div class="img-income" onclick="location.href='/articles/Incomepage';"></div>
+				<div class="img-profile" onclick="location.href='/articles/Mypage';"></div>
+				<!-- <div>
+					<a href="/articles/Mypage">
+						<img class="img-profile" src="image/Profile.png"/>
+					</a>
+				</div> -->
 			</div>
 			<div class="main-box"> <!-- main -->
 				<div class="div50">
 					<div class="cost-box"> <!-- monthly cost -->
-						<div><pre>costbox</pre></div>
+						<div class="cost-text"><b>
+							<pre class="cost-pont">costbox</pre>
+							<br>
+							<pre class="cost-pont">{{user.login_name}}</pre></b>
+						</div>
 					</div>
 					<div class="income-box"> <!-- monthly income -->
-						<p>incomebox</p>
+						<div class="income-text"><b>
+							<pre class="income-pont">incomebox</pre>
+							<br>
+							<pre class="income-pont">{{user.login_name}}</pre></b>
+						</div>
 					</div>
 				</div>
 				<div class="category-box"> <!-- category -->
@@ -33,8 +51,8 @@
 						<pre class="category-pont"><b>지출 카테고리 순위</b></pre>
 					</div>
 					<div class="circle-div">
-						<div class="circle1" onclick="location.href='new';"><p>쇼핑</p></div>
-						<div class="circle2" onclick="location.href='new';"></div>
+						<div class="circle1" onclick="location.href='https://www.naver.com';"><p>쇼핑</p></div>
+						<div class="circle2" onclick="location.href='/hi';"></div>
 						<div class="circle3" onclick="location.href='new';"></div>
 						<div class="circle4" onclick="location.href='new';"></div>
 					</div>
