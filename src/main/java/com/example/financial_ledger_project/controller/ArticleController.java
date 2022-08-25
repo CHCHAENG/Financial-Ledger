@@ -11,8 +11,10 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.example.financial_ledger_project.dto.ArticleForm;
+import com.example.financial_ledger_project.dto.CommentDto;
 import com.example.financial_ledger_project.entity.Article;
 import com.example.financial_ledger_project.repository.ArticleRepository;
+import com.example.financial_ledger_project.service.CommentService;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -22,6 +24,9 @@ public class ArticleController {
 
 	@Autowired
 	private ArticleRepository articleRepository;
+
+	@Autowired
+	private CommentService commentService;
 	
 	
 	@GetMapping("/articles/new")
@@ -46,8 +51,10 @@ public class ArticleController {
 	public String show(@PathVariable Long id, Model model) {
 		log.info("id = " + id);
 		Article articleEntity = articleRepository.findById(id).orElse(null);
+		List<CommentDto> commentDtos = commentService.comments(id);
 
 		model.addAttribute("article", articleEntity);
+		model.addAttribute("commentDtos", commentDtos);
 
 		return "articles/show";
 	}
