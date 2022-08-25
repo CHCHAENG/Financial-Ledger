@@ -14,14 +14,12 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
-import lombok.extern.slf4j.Slf4j;
 
 @Entity
 @Getter
 @ToString
 @AllArgsConstructor
 @NoArgsConstructor
-@Slf4j
 public class Comment {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -41,7 +39,6 @@ public class Comment {
 		// 예외 처리
 		if (dto.getId() != null)
 			throw new IllegalArgumentException("댓글 생성 실패! 댓글의 id가 없어야 합니다.");
-		log.info("dto.getArticleId = " + dto.getArticleId() + "article.getId = " + article.getId());
 		if (dto.getArticleId() != article.getId())
 			throw new IllegalArgumentException("댓글 생성 실패! 게시글의 id가 잘못되었습니다.");
 
