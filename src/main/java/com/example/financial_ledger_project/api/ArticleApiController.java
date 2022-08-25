@@ -49,7 +49,7 @@ public class ArticleApiController {
 	}
 
 	// DELETE
-	@DeleteMapping("/api/articles/2")
+	@DeleteMapping("/api/articles/{id}")
 	public ResponseEntity<Article> delete(@PathVariable Long id) {
 		Article deleted = articleService.delete(id);
 
