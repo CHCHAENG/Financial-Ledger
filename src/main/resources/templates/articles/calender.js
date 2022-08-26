@@ -1,54 +1,87 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" type="text/css" href="/css/calenderPage.css">
-	<link rel="stylesheet" type="text/css" href="/css/calender.css">
-	<title>{{user.login_name}}'s Calenderpage</title>
-</head>
-<body>
-	<div class="window-block">
-		<div class="side-bar"> <!-- side bar -->
-			<div class="img-cost" onclick="location.href='/articles/Costpage';"></div>
-			<div class="img-calender" onclick="location.href='/articles/Calenderpage';"></div>
-			<div class="img-home" onclick="location.href='/articles/Mainpage';"></div>
-			<div class="img-income" onclick="location.href='/articles/Incomepage';"></div>
-			<div class="img-profile" onclick="location.href='/articles/Mypage';"></div>
-		</div>
-		<div class="main-box">
-			<!-- 달력 -->
-			<div class ="calender">
-				<div class='rap'>
-					<div class="header">
-					   <div class="btn prevDay"></div>
-					  <h2 class='dateTitle'></h2>
-					  <div class="btn nextDay"></div>
-					</div>
+ // 달력 생성
+ const makeCalendar = (date) => {
+    
+    // 현재의 년도와 월 받아오기
+    const nowYear = new Date(date).getFullYear();
+    const nowMonth = new Date(date).getMonth() + 1;
 
-					<div class="divasdfa">
-						<div class="gridDay dateHead">
-						<div>일</div>
-						<div>월</div>
-						<div>화</div>
-						<div>수</div>
-						<div>목</div>
-						<div>금</div>
-						<div>토</div>
-						</div>
-					</div>
+    // 지난달의 마지막 요일
+    const prevDay = new Date(nowYear, nowMonth - 1, 1).getDay();
 
-					<div class="grid dateBoard"></div>
-				  </div>
-				  <!-- 달력 만들기 js 파일 연결-->
-				  <script type="text/javascript" src="calender.js"></script>
-			</div>
+    // 현재 월의 마지막 날 구하기
+    const lastDay = new Date(nowYear, nowMonth, 0).getDate();
 
-			<div class="detail-bar">
-				<pre>울랄라</pre>
-			</div>
-		</div>
-	</div>
-</body>
-</html>
+    // // NEW
+    // // 지난 달 마지막 날짜와 요일
+    // const prevLast = new Date(nowYear, nowMonth, 0);
+    // const PLDate = prevLast.getDate();
+    // const PLDay = prevLast.getDay();
+
+    // // 이번 달 마지막 날짜와 요일
+    // const thisLast = new Date(nowYear, nowMonth + 1, 0);
+    // const TLDate = thisLast.getDate();
+    // const TLDay = thisLast.getDay();
+
+    // // 날짜 데이터 저장
+    // const prevDates = [];
+    // const nextDates = [];
+
+    // if (PLDay !== 6){
+    //     for (let i = 0; i < PLDay + 1; i++){
+    //         prevDates.unshift(PLDate - i);
+    //     }
+    // }
+
+    // for (let i = 1; i < 7 - TLDay; i++){
+    //     nextDates.push(i);
+    // }
+
+    // 남은 박스만큼 다음달 날짜 표시
+    let nextDay = (prevDay + lastDay) % 7;
+    
+    if (nextDay == 0) nextDay = 7;
+
+    let htmlDummy = '';
+
+    // 전달 날짜 표시하기
+    for (let i = 0; i < prevDay; i++) {
+      htmlDummy += `<div class="noColor"></div>`;
+    }
+
+    // prevDates.forEach ((date, i) =>{
+    //     prevDates[i] =`<div class="noColor">${date}</div>`;
+    // })
+    
+  
+    // 현재 날짜 표시하기
+    for (let i = 1; i <= lastDay; i++) {    
+      htmlDummy += `<div>${i}</div>`;
+    }
+
+    // 다음달 날짜 표시하기
+    for (let i = nextDay; i < 7; i++) {
+      htmlDummy += `<div class="noColor"></div>`;
+    }
+
+    // 날짜 박스 표시하기
+    document.querySelector(`.dateBoard`).innerHTML = htmlDummy;
+
+    // 현재 날짜 정보 표시하기
+    document.querySelector(`.dateTitle`).innerText = `${nowYear}년 ${nowMonth}월`;
+  }
+  
+window.onload = () => {
+  const date = new Date();
+ 
+  makeCalendar(date);
+  
+  // 이전달 이동
+  document.querySelector(`.prevDay`).onclick = () => {
+    makeCalendar(new Date(date.setMonth(date.getMonth() - 1)));
+  }
+  
+  // 다음달 이동
+  document.querySelector(`.nextDay`).onclick = () => {
+    makeCalendar(new Date(date.setMonth(date.getMonth() + 1)));
+  }
+};
