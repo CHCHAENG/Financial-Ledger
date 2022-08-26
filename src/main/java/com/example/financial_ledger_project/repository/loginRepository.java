@@ -4,6 +4,7 @@ import org.springframework.data.repository.CrudRepository;
 
 import com.example.financial_ledger_project.entity.login_ID;
 
-public interface loginRepository extends CrudRepository<login_ID, Long> {
+public interface loginRepository extends CrudRepository<login_ID, String> {
+
 	
 }

@@ -9,23 +9,12 @@ import lombok.ToString;
 @ToString
 public class LoginForm {
 	
-	private Long id;
 	private String login_ID;
 	private String login_pw;
+	private String login_name;
 
 	public login_ID toEntity() {
-		return new login_ID(null, login_ID, login_pw);
+		return new login_ID(login_ID, login_pw, login_name);
 	}
 
-	public boolean checkID() {
-		String id = "hyunseo";
-		String pw = "1234";
-
-		if(login_ID.equals(id) && login_pw.equals(pw)){
-			return true;
-		}
-
-		return false;
-	}
-	
 }
