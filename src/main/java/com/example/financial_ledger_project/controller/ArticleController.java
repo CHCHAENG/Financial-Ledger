@@ -14,11 +14,6 @@ import com.example.financial_ledger_project.dto.ArticleForm;
 @Controller
 public class ArticleController {
 
-	@GetMapping("/articles/login")
-	public String loginForm() {
-		return "articles/login";
-	}
-	
 	@GetMapping("/articles/new")
 	public String newArticleForm() {
 		return "articles/new";

@@ -69,4 +69,19 @@
 	width: 89%;
 	height: 900px;
  }
- 
+
+ .detail-bar{
+    float: right;
+	width: 18%;
+	height: 900px;
+
+	border-left: 1px solid #000000;
+
+	text-align: center;
+ }
+
+ .calender{
+	float: left;
+    width: 70%;
+	height: 900px;
+ }

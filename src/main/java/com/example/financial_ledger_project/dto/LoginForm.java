@@ -9,6 +9,7 @@ import lombok.ToString;
 @ToString
 public class LoginForm {
 	
+	private Long id;
 	private String login_ID;
 	private String login_pw;
 	private String login_name;
