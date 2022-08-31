@@ -58,6 +58,7 @@ public class LoginController {
 	@PostMapping("/articles/checkID")
 	public String checkIDArticle(LoginForm form, RedirectAttributes rttr) {
 		login_ID article = form.toEntity();
+		log.info(article.toString());
 		String id = article.getLogin_ID();
 		login_ID target = loginRepository.findById(id).orElse(null);
 

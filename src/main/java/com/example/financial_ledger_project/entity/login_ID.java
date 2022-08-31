@@ -25,6 +25,9 @@ public class login_ID {
 	@Column
 	private String login_name;
 
+	@Column
+	private int limit_amount;
+
 	public boolean checkID(login_ID target) {
 		String pw = target.login_pw;
 
