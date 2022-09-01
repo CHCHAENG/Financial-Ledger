@@ -161,6 +161,34 @@
 	
  }
 
+ .limit-text {
+	margin: 0px;
+	margin-top: 20px;
+	position: absolute;
+	left: 35px;
+	float: left;
+	font-family: 'Inter';
+	
+	font-size: 35px;
+ }
+
+ .limit-box-outline {
+	width: 1000px;
+	height: 100px;
+	position: relative;
+	top: 50%;
+	left: 25%;
+
+	border: 1px solid #000000;
+ }
+
+ .limit-box-inline {
+	height: 100px;
+	position: relative;
+
+	background-color: #777777;
+ }
+
  .logout-btn {
 	position: relative;
 	float: right;
@@ -169,10 +197,10 @@
  }
 
  .limit-btn {
-	position: relative;
+	position: absolute;
 	float: left;
 	top: 24px;
-	left: 60px;
+	left: 270px;
  }
 
  .btn-gradient.mini {
