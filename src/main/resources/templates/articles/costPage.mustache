@@ -10,14 +10,38 @@
 <body>
 	<div class="window-block">
 		<div class="side-bar"> <!-- side bar -->
-			<div class="img-cost" onclick="location.href='/articles/Costpage';"></div>
-			<div class="img-calender" onclick="location.href='/articles/Calenderpage';"></div>
-			<div class="img-home" onclick="location.href='/articles/Mainpage';"></div>
-			<div class="img-income" onclick="location.href='/articles/Incomepage';"></div>
-			<div class="img-profile" onclick="location.href='/articles/Mypage';"></div>
+			<div class="img-cost" onclick="location.href='/articles/Costpage';" style="cursor: pointer;"></div>
+			<div class="img-calender" onclick="location.href='/articles/Calenderpage';" style="cursor: pointer;"></div>
+			<div class="img-home" onclick="location.href='/articles/Mainpage';" style="cursor: pointer;"></div>
+			<div class="img-income" onclick="location.href='/articles/Incomepage';" style="cursor: pointer;"></div>
+			<div class="img-profile" onclick="location.href='/articles/Mypage';" style="cursor: pointer;"></div>
 		</div>
 		<div class="main-box">
-
+			<form class="container" action="/articles/create/cost" method="post">
+				<div class="mb-3">
+					<label>이름</label>
+					<input type="text" name="name">
+				</div>
+				<div class="mb-3">
+					<label>가격</label>
+					<textarea rows="3" name="price"></textarea>
+				</div>
+				<div class="mb-3">
+					<label>날짜</label>
+					<textarea rows="3" name="date"></textarea>
+				</div>
+				<div class="mb-3">
+					<label>카테고리</label>
+					<textarea rows="3" name="category"></textarea>
+				</div>
+				<div class="mb-3">
+					<label>은행</label>
+					<textarea rows="3" name="account"></textarea>
+				</div>
+				<!-- 히든 인풋으로 login_ID 넘기기 -->
+				<input type="hidden" id="login_id" value="{{user.login_ID}}">
+				<button type="submit">Submit</button>
+			</form>
 		</div>
 	</div>
 </body>

@@ -18,6 +18,33 @@ public class ArticleController {
 	public String newArticleForm() {
 		return "articles/new";
 	}
+	
+	@PostMapping("/articles/create")
+	public String createArticle(ArticleForm form) {
+		log.info(form.toString());
+
+		Article article = form.toEntity();
+		log.info(article.toString());
+
+		Article saved = articleRepository.save(article);
+		log.info(saved.toString());
+
+		return "redirect:/articles/" + saved.getId();
+	}
+
+	@GetMapping("/articles/{id}")
+	public String show(@PathVariable Long id, Model model) {
+		log.info("id = " + id);
+		Article articleEntity = articleRepository.findById(id).orElse(null);
+		List<CommentDto> commentDtos = commentService.comments(id);
+
+		log.info(commentDtos.toString());
+
+		model.addAttribute("article", articleEntity);
+		model.addAttribute("commentDtos", commentDtos);
+
+		return "articles/show";
+	}
 
 	// api 사용자인증 페이지 추가
 	@GetMapping("/articles/api")
@@ -25,10 +52,30 @@ public class ArticleController {
 		return "articles/api";
 	}
 
-	@PostMapping("/articles/create")
-	public String createArticle(ArticleForm form) {
-		System.out.println(form.toString());
-		return "";
+	@GetMapping("/articles/{id}/edit")
+	public String edit(@PathVariable Long id, Model model) {
+		Article articleEntity = articleRepository.findById(id).orElse(null);
+		log.info(articleEntity.toString());
+
+		model.addAttribute("article", articleEntity);
+
+		return "articles/edit";
+	}
+
+	@PostMapping("/articles/update")
+	public String update(ArticleForm form) {
+		log.info(form.toString());
+		
+		Article articleEntity = form.toEntity();
+		log.info(articleEntity.toString());
+
+		Article target = articleRepository.findById(articleEntity.getId()).orElse(null);
+
+		if(target!=null) {
+			articleRepository.save(articleEntity);
+		}
+
+		return "redirect:/articles/" + articleEntity.getId();
 	}
 
 	@GetMapping("/articles/mainPage")

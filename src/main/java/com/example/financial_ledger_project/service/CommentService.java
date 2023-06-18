@@ -14,7 +14,10 @@ import com.example.financial_ledger_project.entity.Comment;
 import com.example.financial_ledger_project.repository.ArticleRepository;
 import com.example.financial_ledger_project.repository.CommentRepository;
 
+import lombok.extern.slf4j.Slf4j;
+
 @Service
+@Slf4j
 public class CommentService {
 	@Autowired
 	private CommentRepository commentRepository;
@@ -35,6 +38,8 @@ public class CommentService {
 
 		// // 반환
 		// return dtos;
+
+		log.info("id = " + articleId);
 		
 		return commentRepository.findByArticleId(articleId)
 				.stream()
@@ -49,6 +54,7 @@ public class CommentService {
 
 		// 댓글 엔티티 생성
 		Comment comment = Comment.createComment(dto, article);
+		log.info(comment.toString());
 
 		// 댓글 엔티티를 DB로 저장
 		Comment created = commentRepository.save(comment);

@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import com.example.financial_ledger_project.dto.CostDto;
 import com.example.financial_ledger_project.dto.LoginForm;
 import com.example.financial_ledger_project.entity.login_ID;
 import com.example.financial_ledger_project.repository.loginRepository;
@@ -58,6 +59,7 @@ public class LoginController {
 	@PostMapping("/articles/checkID")
 	public String checkIDArticle(LoginForm form, RedirectAttributes rttr) {
 		login_ID article = form.toEntity();
+		log.info(article.toString());
 		String id = article.getLogin_ID();
 		login_ID target = loginRepository.findById(id).orElse(null);
 
@@ -69,6 +71,13 @@ public class LoginController {
 		rttr.addFlashAttribute("msg", "ID 혹은 비밀번호가 잘못되었습니다!");
 
 		return "redirect:/articles/login";
+	}
+
+	@PostMapping("/articles/create/cost")
+	public String createCost(CostDto dto) {
+		
+
+		return "redirect:/articles/Costpage";
 	}
 
 	@GetMapping("/articles/Costpage")

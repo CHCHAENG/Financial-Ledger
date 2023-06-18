@@ -25,6 +25,6 @@ INSERT INTO comment(id, article_id, nickname, body) VALUES(9, 6, 'Choi', '독서
 
 
 
-INSERT INTO login_ID(login_ID, login_pw, login_name) VALUES('aaaa', '1111', '박현서');
-INSERT INTO login_ID(login_ID, login_pw, login_name) VALUES('bbbb', '2222', '정희찬');
-INSERT INTO login_ID(login_ID, login_pw, login_name) VALUES('cccc', '3333', '오채영');
+INSERT INTO login_ID(login_ID, login_pw, login_name, limit_amount) VALUES('aaaa', '1111', '박현서', -1);
+INSERT INTO login_ID(login_ID, login_pw, login_name, limit_amount) VALUES('bbbb', '2222', '정희찬', -1);
+INSERT INTO login_ID(login_ID, login_pw, login_name, limit_amount) VALUES('cccc', '3333', '오채영', -1);

@@ -5,6 +5,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -12,33 +13,26 @@ import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 @Entity
-@AllArgsConstructor
-@ToString
-@NoArgsConstructor
 @Getter
-public class login_ID {
-
+@ToString
+@AllArgsConstructor
+@NoArgsConstructor
+public class Account {
 
 	@Id
-	private String login_ID;
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
+
+	@ManyToOne
+	private login_ID login_id;
 
 	@Column
-	private String login_pw;
-	
-	@Column
-	private String login_name;
+	private String account_number;
 
 	@Column
-	private int limit_amount;
+	private String bank_name;
 
-	public boolean checkID(login_ID target) {
-		String pw = target.login_pw;
-
-		if(this.login_pw.equals(pw)){
-			return true;
-		}
-
-		return false;
-	}
+	@Column
+	private String nickname;
 	
 }
