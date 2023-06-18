@@ -53,6 +53,8 @@ public class ArticleController {
 		Article articleEntity = articleRepository.findById(id).orElse(null);
 		List<CommentDto> commentDtos = commentService.comments(id);
 
+		log.info(commentDtos.toString());
+
 		model.addAttribute("article", articleEntity);
 		model.addAttribute("commentDtos", commentDtos);
 
@@ -71,6 +73,7 @@ public class ArticleController {
 	@GetMapping("/articles/{id}/edit")
 	public String edit(@PathVariable Long id, Model model) {
 		Article articleEntity = articleRepository.findById(id).orElse(null);
+		log.info(articleEntity.toString());
 
 		model.addAttribute("article", articleEntity);
 

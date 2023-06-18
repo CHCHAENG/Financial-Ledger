@@ -177,14 +177,16 @@
 	height: 100px;
 	position: relative;
 	top: 50%;
-	left: 25%;
+	left: 20%;
 
 	border: 1px solid #000000;
+	border-radius: 10px;
  }
 
  .limit-box-inline {
 	height: 100px;
 	position: relative;
+	border-radius: 10px 0px 0px 10px;
 
 	background-color: #777777;
  }
