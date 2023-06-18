@@ -19,7 +19,7 @@ import lombok.extern.slf4j.Slf4j;
 public class LoginController {
 
 	public String user_id = null;
-	
+
 	@Autowired
 	private loginRepository loginRepository;
 
@@ -28,7 +28,7 @@ public class LoginController {
 		if(user_id != null) {
 			return "redirect:/articles/Mainpage";
 		}
-		
+
 		return "articles/login";
 	}
 
@@ -41,7 +41,7 @@ public class LoginController {
 	public String createID(LoginForm form, RedirectAttributes rttr) {
 		login_ID article = form.toEntity(); // aaaa
 		log.info(article.toString());
-		
+
 		String id = article.getLogin_ID();
 		login_ID target = loginRepository.findById(id).orElse(null);
 		if(target != null) {

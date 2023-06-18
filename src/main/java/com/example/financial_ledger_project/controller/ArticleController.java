@@ -1,34 +1,19 @@
 package com.example.financial_ledger_project.controller;
 
-import java.util.List;
-
+import com.example.financial_ledger_project.FinancialLedgerProjectApplication;
+import com.example.financial_ledger_project.dto.TokenRequestDto;
+import com.example.financial_ledger_project.dto.TokenResponseDto;
+import lombok.Value;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+import org.springframework.web.bind.annotation.*;
 
 import com.example.financial_ledger_project.dto.ArticleForm;
-import com.example.financial_ledger_project.dto.CommentDto;
-import com.example.financial_ledger_project.entity.Article;
-import com.example.financial_ledger_project.repository.ArticleRepository;
-import com.example.financial_ledger_project.service.CommentService;
-
-import lombok.extern.slf4j.Slf4j;
 
 @Controller
-@Slf4j
 public class ArticleController {
 
-	@Autowired
-	private ArticleRepository articleRepository;
-
-	@Autowired
-	private CommentService commentService;
-	
-	
 	@GetMapping("/articles/new")
 	public String newArticleForm() {
 		return "articles/new";
@@ -61,13 +46,10 @@ public class ArticleController {
 		return "articles/show";
 	}
 
-	@GetMapping("/articles")
-	public String index(Model model) {
-		List<Article> articleEntityList = articleRepository.findAll();
-		
-		model.addAttribute("articleList", articleEntityList);
-
-		return "articles/index";
+	// api 사용자인증 페이지 추가
+	@GetMapping("/articles/api")
+	public String apiForm() {
+		return "articles/api";
 	}
 
 	@GetMapping("/articles/{id}/edit")
@@ -96,16 +78,9 @@ public class ArticleController {
 		return "redirect:/articles/" + articleEntity.getId();
 	}
 
-	@GetMapping("/articles/{id}/delete")
-	public String delete(@PathVariable Long id, RedirectAttributes rttr) {
-		Article target = articleRepository.findById(id).orElse(null);
-
-		if(target!=null) {
-			articleRepository.delete(target);
-			rttr.addFlashAttribute("msg", "삭제가 완료되었습니다!");
-		}
-
-		return "redirect:/articles";
+	@GetMapping("/articles/mainPage")
+	public String mainPageArticleForm(Model model) {
+		model.addAttribute("username", "현서");
+		return"/articles/mainPage";
 	}
-
 }
